@@ -4,7 +4,8 @@
   "description": "my node.js",
   "main": "index.js",
   "scripts": {
-    "start": "hotnode index.js",
+    "start": "node index.js",
+    "pm2": "pm2 start processes.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "orange",
