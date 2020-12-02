@@ -27,4 +27,16 @@ router.post('/upload', upload.array('file'), function (req, res, next) {
     res.json({ 'code': 1, 'message': '文件上传成功', data: { path: fileList } })
 })
 
+// Form提交且携带多文件上传
+router.post('/formAdd', upload.array('file'), function (req, res, next) {
+    let name = req.body.name
+    let age = req.body.age
+    let fileList = [];
+    req.files.map((item) => {
+        let path = '/uploads/' + item.filename
+        fileList.push(path)
+    })
+    res.json({ 'code': 1, 'message': '表单提交成功', data: { name: name, age: age, path: fileList } })
+})
+
 module.exports = router
