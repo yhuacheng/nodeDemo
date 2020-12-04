@@ -8,10 +8,10 @@ app.use(bodyParser.urlencoded({ extended: false })) //解析表单参数
 
 app.use('/uploads', express.static(__dirname + '/uploads')) //静态文件路径
 
-const user = require('./api/user')
-const role = require('./api/role')
-const menu = require('./api/menu')
-const upload = require('./api/upload')
+const user = require('./apis/user')
+const role = require('./apis/role')
+const menu = require('./apis/menu')
+const upload = require('./apis/upload')
 
 app.use('/api/user', user)
 app.use('/api/role', role)
