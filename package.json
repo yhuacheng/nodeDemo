@@ -1,7 +1,7 @@
 {
-  "name": "node-pro",
+  "name": "node-app",
   "version": "1.0.0",
-  "description": "my node.js",
+  "description": "node app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

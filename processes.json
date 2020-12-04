@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "app",
+            "name": "node-app",
             "script": "./",
             "cwd": "./",
             "watch": true,
