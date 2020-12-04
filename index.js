@@ -9,9 +9,13 @@ app.use(bodyParser.urlencoded({ extended: false })) //解析表单参数
 app.use('/uploads', express.static(__dirname + '/uploads')) //静态文件路径
 
 const user = require('./api/user')
+const role = require('./api/role')
+const menu = require('./api/menu')
 const upload = require('./api/upload')
 
 app.use('/api/user', user)
+app.use('/api/role', role)
+app.use('/api/menu', menu)
 app.use('/api', upload)
 
 app.listen(80, () => { console.log('服务启动在80端口') })

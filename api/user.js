@@ -2,6 +2,8 @@ const pool = require('../db')
 const express = require('express')
 const router = express.Router()
 
+/* 用户API */
+
 // 列表
 router.get('/list', (req, res) => {
     pool.getConnection((err, conn) => {
