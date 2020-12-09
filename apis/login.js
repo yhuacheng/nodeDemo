@@ -12,7 +12,6 @@ router.post('/login', (req, res) => {
         let password = req.body.password
         let params = [user, password]
         conn.query('select id,user,name from user where user=? and password=?', params, (e, r) => {
-            console.log(r)
             if (r.length != 0) {
                 let dataString = JSON.stringify(r)
                 let data = JSON.parse(dataString)
