@@ -7,14 +7,15 @@ app.use(cors()) //解决跨域
 app.use(bodyParser.json()) //解析json参数
 app.use(bodyParser.urlencoded({ extended: false })) //解析表单参数
 
-app.use('/uploads', express.static(__dirname + '/uploads')) //静态文件路径
+app.use('/uploads', express.static(__dirname + '/uploads')) //静态文件路径(文件上传)
+app.use('/', express.static(__dirname + '/dist')) //静态文件路径(前端文件)
 
 // 使用expressJWT验证token
 app.use(expressJWT({
-    secret: 'key_110120', // 签名密钥(必须与生成token时的秘钥一致)
-    algorithms: ["HS256"] // 加密算法(HS256为express-jwt配置algorithms的默认值,必填)
+    secret: 'key_110120', //签名密钥(必须与生成token时的秘钥一致)
+    algorithms: ["HS256"] //加密算法(HS256为express-jwt配置algorithms的默认值,必填)
 }).unless({
-    path: ['/api/login/login'] // 指定不经过Token验证的路由
+    path: ['/api/login/login'] //指定不经过Token验证的路由
 }))
 
 // 当token无效返回提示信息
